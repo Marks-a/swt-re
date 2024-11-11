@@ -12,7 +12,7 @@
     color: #333;
 }
 
-/* Form Labels - Apply styles to labels in both #formAdd and #dynamicFields */
+/* Form Labels - Apply styles to #formAdd and #dynamicFields */
 #formAdd label,
 #dynamicFields label {
     display: block;
@@ -21,7 +21,7 @@
     color: #333;
 }
 
-/* Input and Select Fields - Applies to both main form fields and dynamically generated fields */
+/* Input and Select Fields -  main  and dynamical fields */
 #formAdd input[type="text"],
 #formAdd input[type="number"],
 #formAdd select,

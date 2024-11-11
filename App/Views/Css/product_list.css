@@ -1,8 +1,8 @@
 .container {
-    padding: 20px; /* Adding padding for general spacing */
+    padding: 20px; 
 }
 
-/* Product Grid */
+
 .product-grid {
     padding-top: 0; /* Ensure no extra space above grid */
     margin-top: 0; /* Remove or reduce top margin */
@@ -37,7 +37,7 @@
 /* Delete Checkbox */
 .delete-checkbox {  
     position: absolute;
-    top: 10px; /* Adjust positioning if needed */
+    top: 10px; /*  positioning*/
     right: 10px; /* Aligns the checkbox to the top-right */
 }
 

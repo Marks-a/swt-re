@@ -64,30 +64,3 @@ switch ($action) {
 }
 
 ob_end_flush();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// header and body initialization part
-// $header = new HeaderController();
-// $header->showHeader(null);
-
-// Controller for product list
-// $controller = new ProductListController($productModel);
-// $controller->index();
-
-// Controller for Add product
-// $formController = new AddProductController();
-// $formController->show();
