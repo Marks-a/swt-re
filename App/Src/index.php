@@ -23,44 +23,48 @@ $database = new Database();
 $productModel = new ProductList($database);
 
 $action = $_GET['action'] ?? 'default';
-if (!isset($_GET['action'])) {
+if (!isset($_GET['action'])) 
+{
     header("Location: /App/Src/index.php?action=default");
     exit;
 }
 
 
 $header = new HeaderController();
-switch ($action) {
-    case 'default':
-        $header->main_ProductPage();
-        $header->showHeader();
+switch ($action) 
+{
+case 'default':
+    $header->main_ProductPage();
+    $header->showHeader();
 
-        $controller = new ProductListController($productModel);
-        $controller->index();
+    $controller = new ProductListController($productModel);
+    $controller->index();
 
-        // Here should be controller initilizing for Delete POST
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $controller->requestHandle($_POST);
-        }
+    // Here should be controller initilizing for Delete POST
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') 
+    {
+    $controller->requestHandle($_POST);
+    }
+    break;
 
-        break;
-    case 'Add_Product':
-        $header->add_ProductPage();
-        $header->showHeader();
+case 'Add_Product':
+    $header->add_ProductPage();
+    $header->showHeader();
 
-        $formController = new AddProductController($database->getConnection());
-        $formController->show();
+    $formController = new AddProductController($database->getConnection());
+    $formController->show();
 
-        // Here should be controller initilizing for Add POST
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $formController->requestHandle($_POST);
-        }
+    // Here should be controller initilizing for Add POST
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') 
+    {
+    $formController->requestHandle($_POST);
+    }
+    break;
 
-        break;
-    default:
-        header("HTTP/1.0 404 Not Found");
-        echo "404 Page Not Found";
-        break;
+default:
+    header("HTTP/1.0 404 Not Found");
+    echo "404 Page Not Found";
+    break;
 }
 
 ob_end_flush();

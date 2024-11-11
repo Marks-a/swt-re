@@ -44,7 +44,9 @@ class ProductList
             throw new Exception('No items selected for deletion.');
         }
         $placeholders = implode(',', array_fill(0, count($items), '?'));
-        $stmt = $this->db->prepare("DELETE FROM products WHERE sku IN ($placeholders)");
+        $stmt = $this->db->prepare(
+            "DELETE FROM products WHERE sku IN ($placeholders)"
+        );
         if (!$stmt->execute($items)) {
             $errorInfo = $stmt->errorInfo();
             $errorMessage = isset($errorInfo[2]) ? $errorInfo[2] : 'Unknown error';

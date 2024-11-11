@@ -29,9 +29,9 @@ abstract class Product
     public static function getCommonFields(): array
     {
         return [
-            'sku' => ['label' => 'SKU', 'type' => 'text'],
-            'name' => ['label' => 'Name', 'type' => 'text'],
-            'price' => ['label' => 'Price', 'type' => 'number'],
+        'sku' => ['label' => 'SKU', 'type' => 'text'],
+        'name' => ['label' => 'Name', 'type' => 'text'],
+        'price' => ['label' => 'Price', 'type' => 'number'],
         ];
     }
 
@@ -73,7 +73,9 @@ abstract class Product
             throw new \Exception(implode(", ", $errors));
         }
         try {
-            $stmt = $this->pdo->prepare("INSERT INTO products (sku, name, price, type, attribute) VALUES (?, ?, ?, ?, ?)");
+            $stmt = $this->pdo->prepare(
+                "INSERT INTO products (sku, name, price, type, attribute) VALUES (?, ?, ?, ?, ?)"
+            );
             $stmt->execute([
                 $this->sku,
                 $this->name,
@@ -85,9 +87,11 @@ abstract class Product
             exit();
         } catch (\PDOException $e) {
             if ($e->getCode() == 23000) {
-                throw new \Exception("Duplicate SKU");
+                // throw new \Exception("Duplicate SKU");
+                echo '<div class="error-message">Duplicate SKU</div>';
             } else {
-                throw new \Exception("Database error: " . $e->getMessage());
+                // throw new \Exception("Database error: " . $e->getMessage());
+                echo '<div class="error-message">Database error: ' . htmlspecialchars($e->getMessage()) . '</div>';
             }
         }
     }

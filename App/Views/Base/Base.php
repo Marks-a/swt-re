@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../Views/Css/footer.css">
     <link rel="stylesheet" href="../Views/Css/header.css">
     <link rel="stylesheet" href="../Views/Css/product_list.css">
+    <link rel="stylesheet" href="../Views/Css/error_message.css">
     <title>ScandiTest</title>
 </head>
 <body>

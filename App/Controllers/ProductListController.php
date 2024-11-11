@@ -25,16 +25,15 @@ class ProductListController
     }
 
     // Display a single product based on its ID
-public function show($id)
-{
-    $product = $this->productModel->getProductById($id);
-    require_once '../Views/Body/ProductList.php';
-}
+    public function show($id)
+    {
+        $product = $this->productModel->getProductById($id);
+        require_once '../Views/Body/ProductList.php';
+    }
 
 public function requestHandle($postItems)
     {
-    $items = $postItems['items'];
-    $this->productModel->itemsToDelete($items);
-
+        $items = $postItems['items'];
+        $this->productModel->itemsToDelete($items);
     }
 }

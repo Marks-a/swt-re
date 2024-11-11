@@ -25,24 +25,24 @@ class AddProductController
     private function loadProductTypes()
     {
         $this->productTypes = [
-            'Dvd' => DVD::class,
-            'Furniture' => Furniture::class,
-            'Book' => Book::class,
-            // Add additional product types here if needed
+        'Dvd' => DVD::class,
+        'Furniture' => Furniture::class,
+        'Book' => Book::class,
+        // Add additional product types here 
         ];
     }
     public function getFormData(): array
     {
         $formData = [
-            'types' => [],
-            'commonFields' => Product::getCommonFields()
+        'types' => [],
+        'commonFields' => Product::getCommonFields()
         ];
 
         foreach ($this->productTypes as $type => $class) {
-            $formData['types'][$type] = [
-                'label' => $type,
-                'fields' => $class::getSpecificFields()
-            ];
+        $formData['types'][$type] = [
+         'label' => $type,
+         'fields' => $class::getSpecificFields()
+        ];
         }
         return $formData;
     }

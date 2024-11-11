@@ -31,12 +31,16 @@ class HeaderController
         // Clear current buttons and set new ones based on provided data
         $this->clearButtons();
         foreach ($buttonData as $data) {
-            if (isset($data['name'], $data['id'], $data['link'])) {
-                $this->addButton($data['name'], $data['id'], $data['link'],$data['type']);
-            } else {
-                throw new \InvalidArgumentException("Each button must have 'name', 'id', 'link', and 'type'.");
-            }
-        }
+        if (isset($data['name'], $data['id'], $data['link'])) {
+        $this->addButton(
+            $data['name'], $data['id'], $data['link'],$data['type']
+        );
+        } else {
+        throw new \InvalidArgumentException(
+            "Each button must have 'name', 'id', 'link', and 'type'."
+        );
+    }
+    }
     }
     public function clearButtons()
     {
@@ -61,17 +65,15 @@ class HeaderController
     public function main_ProductPage()
     {
         $this->setButtons(
-            ['name' => 'Delete', 'id' => 'delete-product-btn', 'link' => 'default','type'=>'button'],
-            ['name' => 'Add Product', 'id' => '', 'link' => 'Add_Product','type'=>'button']
-            
+        ['name' => 'Delete', 'id' => 'delete-product-btn', 'link' => 'default','type'=>'button'],
+        ['name' => 'Add Product', 'id' => '', 'link' => 'Add_Product','type'=>'button']   
         );
     }
     public function add_ProductPage()
     {
         $this->setButtons(
-            ['name' => 'Cancel', 'id' => 'cancel', 'link' => 'default','type'=>'button'],
-            ['name' => 'Save', 'id' => 'Save', 'link' => '','type'=>'submit']
-            
+        ['name' => 'Cancel', 'id' => 'cancel', 'link' => 'default','type'=>'button'],
+        ['name' => 'Save', 'id' => 'Save', 'link' => '','type'=>'submit'] 
         );
     }
 
