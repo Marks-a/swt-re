@@ -4,6 +4,10 @@ namespace App\Models;
 use PDO;
 // This class is dedicated for Add product page/form.
 
+
+use App\Controllers\HeaderController;
+
+
 abstract class Product
 {
     protected PDO $pdo;
@@ -25,9 +29,9 @@ abstract class Product
     public static function getCommonFields(): array
     {
         return [
-            'sku' => 'SKU',
-            'name' => 'Name',
-            'price' => 'Price',
+            'sku' => ['label' => 'SKU', 'type' => 'text'],
+            'name' => ['label' => 'Name', 'type' => 'text'],
+            'price' => ['label' => 'Price', 'type' => 'number'],
         ];
     }
 
@@ -77,6 +81,8 @@ abstract class Product
                 $this->getType(),
                 $this->getAttributesString()
             ]);
+            header('Location: ' . HeaderController::getDefaultFullPath());
+            exit();
         } catch (\PDOException $e) {
             if ($e->getCode() == 23000) {
                 throw new \Exception("Duplicate SKU");

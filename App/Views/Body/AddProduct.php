@@ -1,8 +1,8 @@
 <form method="POST" id="formAdd">
     <!-- Render common fields -->
-    <?php foreach ($formData['commonFields'] as $field => $label): ?>
-        <label><?= $label ?>:</label>
-        <input type="text" name="<?= $field ?>" required><br>
+    <?php foreach ($formData['commonFields'] as $field => $data): ?>
+        <label><?= $data['label'] ?>:</label>
+        <input type="<?= $data['type'] ?>" name="<?= $field ?>" required><br>
     <?php endforeach; ?>
 
     <!-- Product type selection -->

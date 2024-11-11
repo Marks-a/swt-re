@@ -4,8 +4,8 @@ namespace App\Models;
 
 use PDO;
 use App\Models\Classes\DB\DataBase;
+use App\Controllers\HeaderController;
 
-//use App\Controllers\HeaderController; 
 // Used in deleteItems(), for redirecting
 
 use Exception;
@@ -50,7 +50,8 @@ class ProductList
             $errorMessage = isset($errorInfo[2]) ? $errorInfo[2] : 'Unknown error';
             throw new Exception("Failed to delete items. SQL Error: " . $errorMessage);
         } else {
-            // header('Location: ' . HeaderController::getDefaultFullPath());
+            header('Location: ' . HeaderController::getDefaultFullPath());
+            exit();
         }
     }
 }

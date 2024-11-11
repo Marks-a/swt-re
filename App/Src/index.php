@@ -7,6 +7,9 @@ use App\Controllers\ProductListController;
 use App\Models\ProductList;
 use App\Controllers\AddProductController; // Controller for Add product page
 
+// Used for header(), when redirecting in the models
+ob_start(); 
+
 require_once '../../vendor/autoload.php';
 require_once '../Views/Base/Base.php'; // To load the base for css
 
@@ -38,8 +41,6 @@ switch ($action) {
         // Here should be controller initilizing for Delete POST
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $controller->requestHandle($_POST);
-            header('Location: ' . HeaderController::getDefaultFullPath());
-            exit();
         }
 
         break;
@@ -53,8 +54,6 @@ switch ($action) {
         // Here should be controller initilizing for Add POST
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $formController->requestHandle($_POST);
-            header('Location: ' . HeaderController::getDefaultFullPath());
-            exit();
         }
 
         break;
@@ -63,6 +62,8 @@ switch ($action) {
         echo "404 Page Not Found";
         break;
 }
+
+ob_end_flush();
 
 
 

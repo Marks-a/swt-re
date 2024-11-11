@@ -65,13 +65,7 @@ class AddProductController
 
     public function requestHandle($data)
     {
-        try {
-            $this->createProduct($data);
-            // header('Location: ' . HeaderController::getDefaultFullPath());
-        } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();
-        }
-
+        $this->createProduct($data);
     }
 
 }
