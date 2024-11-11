@@ -1,0 +1,61 @@
+.container {
+    padding: 20px; /* Adding padding for general spacing */
+}
+
+/* Product Grid */
+.product-grid {
+    padding-top: 0; /* Ensure no extra space above grid */
+    margin-top: 0; /* Remove or reduce top margin */
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: flex-start;
+    padding: 0 20px; 
+}
+
+/* List reset */
+.product-grid ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Product Box */
+.product-box {
+    position: relative;
+    width: 200px; 
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    margin-bottom: 10px; 
+}
+/* Delete Checkbox */
+.delete-checkbox {  
+    position: absolute;
+    top: 10px; /* Adjust positioning if needed */
+    right: 10px; /* Aligns the checkbox to the top-right */
+}
+
+/* Product Text */
+.product-box p {
+    margin: 10px 0; /* Vertical margin adjustment */
+    flex-grow: 1;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        margin-top: 10px; /* Smaller space on smaller screens */
+    }
+    .product-box {
+        width: 100%; 
+        margin-bottom: 15px;
+    }
+}

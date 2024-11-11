@@ -1,0 +1,19 @@
+
+/*root.css file contains all color pallet(>?<)*/
+:root {
+    --main-color: #FEFEFE;
+    --main-sudle-background-color: #D7C0C0;
+    --main-buton-box-outline-color: #000000;
+    --main-black: #000000;
+}
+
+/* For testing purposes of the css */
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/* * {
+    outline: 4px solid green !important;
+} */

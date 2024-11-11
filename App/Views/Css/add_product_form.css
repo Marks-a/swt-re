@@ -1,0 +1,68 @@
+/* Form Container */
+#formAdd {
+    margin: 0 10px;
+    padding: 20px;
+}
+
+/* Form Heading */
+#formAdd h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Form Labels - Apply styles to labels in both #formAdd and #dynamicFields */
+#formAdd label,
+#dynamicFields label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Input and Select Fields - Applies to both main form fields and dynamically generated fields */
+#formAdd input[type="text"],
+#formAdd input[type="number"],
+#formAdd select,
+#dynamicFields input[type="text"],
+#dynamicFields input[type="number"],
+#dynamicFields select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #7a7474;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Focus State for Inputs and Selects */
+#formAdd input[type="text"]:focus,
+#formAdd input[type="number"]:focus,
+#formAdd select:focus,
+#dynamicFields input[type="text"]:focus,
+#dynamicFields input[type="number"]:focus,
+#dynamicFields select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Dynamic Fields Section */
+#dynamicFields {
+    margin-top: 20px;
+}
+
+/* Error Message Styles */
+.error-message {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 5px;
+}
+
+/* Input Error State */
+.input-error {
+    border-color: red;
+    background-color: #fbeae9;
+    color: #c0392b;
+}
